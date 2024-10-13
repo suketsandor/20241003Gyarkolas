@@ -2,6 +2,46 @@
     <div class="row">
         <div class="col-12">
             <h2>Butorok</h2>
+
+            <form>
+                <div class="form-group my-2">
+                    <label for="cikkszam" class="form-label">Cikkszám</label>
+                    <input [(ngModel)]="cikkszam" id="cikkszam" name="cikkszam" type="text" class="form-control">
+                </div>
+                <div class="form-group my-2">
+                    <label for="megnevezes" class="form-label">Megnevezés</label>
+                    <input [(ngModel)]="megnevezes" id="megnevezes" name="megnevezes" type="text" class="form-control">
+                </div>
+                <div class="form-group my-2">
+                    <label for="ar" class="form-label">Ár</label>
+                    <input [(ngModel)]="ar" id="ar" name="ar" type="text" class="form-control">
+                </div>
+                <div class="form-group my-2">
+                    <label for="db" class="form-label">Db.</label>
+                    <input [(ngModel)]="db" id="db" name="db" type="text" class="form-control">
+                </div>
+
+                <button type="button" class="btn btn-success w-100 my-3" (click)="felvitel()">Felvitel</button>
+            </form>
+
+            <table class="table table-striped my-3">
+                <thead class="table-primary" >
+                    <tr>
+                        <th>Cikkszám</th>
+                        <th>Megnevezés</th>
+                        <th>Ár</th>
+                        <th>Db.</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor = "let b of tomb">
+                    <tr>
+                        <td>{{b.cikkszam}}</td>
+                        <td>{{b.megnevezes}}</td>
+                        <td>{{b.ar}}</td>
+                        <td>{{b.db}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
