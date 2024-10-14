@@ -35,9 +35,9 @@
                 </thead>
                 <tbody *ngFor = "let b of tomb">
                     <tr>
-                        <td>{{b.cikkszam}}</td>
-                        <td>{{b.megnevezes}}</td>
-                        <td>{{b.ar}}</td>
+                        <td>{{b.cikkszam | uppercase}}</td>
+                        <td>{{b.megnevezes | titlecase}}</td>
+                        <td>{{b.ar | number: '0.2-2'}} Ft</td>
                         <td>{{b.db}}</td>
                     </tr>
                 </tbody>
